@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+    ¿Qué ventajas observa con respecto a la forma de acceder a los objetos que proporciona JavaScript? 
+        - Es más directo, rápido e intuitivo. Facilita mucho el trabajar con el DOM, ademas incluye funcionalidades
+        que sería tedioso programar.
+    -->
+    <p>Hola</p>
+    <p>Que</p>
+    <p>Tal</p>
+    <h1>Hehey</h1>
+    <span id="prueba"></span>
+    <br>
+    <table>
+        <tr>
+            <th>1</th>
+        </tr>
+        <tr>
+            <th>2</th>
+        </tr>
+        <tr>
+            <th>3</th>
+        </tr>
+        <tr>
+            <th>4</th>
+        </tr>
+    </table>
+    <br>
+    <button id="boton">PULSAR</button>
+    <br>
+    <span id="prueba2">Impares: </span>
+    <br>
+    <span id="prueba3">: los pares</span>
+    <br>
+    <button id="lol">Sayonara</button>
+    <script>
+        $(document).ready(function () {
+            $("#boton").click(function () {
+                var prueba = $("p").text();
+                $("#prueba").append(prueba);
+                prueba = $("tr:even").text();
+                $("#prueba2").append(prueba);
+                prueba = $("tr:odd").text();
+                $("#prueba3").prepend(prueba);
+                $("#boton").text("No pulses mas, esto es violencia de genero");
+            })
+            $("#lol").click(function(){
+                $("*").fadeOut(2000);
+            })
+        })
+    </script>
+</body>
+
+</html>
